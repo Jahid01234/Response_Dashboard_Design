@@ -117,7 +117,7 @@ List<TransactionHistory> transactionHistory = [
 ];
 
 
-// 4th:- Model for Card Model...............
+// 4th:- Model for Info Card Model...............
 class InfoCardModel {
   final String icon;
   final String label;

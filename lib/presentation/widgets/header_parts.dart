@@ -39,7 +39,7 @@ class HeaderParts extends StatelessWidget {
                 hintText: "Search",
                 filled: true,
                 fillColor: Colors.white,
-                contentPadding: const EdgeInsets.only(left: 10,right: 5),
+                contentPadding: const EdgeInsets.only(left: 5,right: 5),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                   borderSide: BorderSide.none,

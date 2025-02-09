@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/config/responsive.dart';
+import 'package:responsive_dashboard/config/size_config.dart';
+import 'package:responsive_dashboard/data/model/model.dart';
 import 'package:responsive_dashboard/presentation/widgets/header_parts.dart';
 import 'package:responsive_dashboard/presentation/widgets/side_drawer_menu.dart';
+import 'package:responsive_dashboard/presentation/widgets/transfer_info_card.dart';
 import 'package:responsive_dashboard/resources/color/my_app_color.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -10,6 +13,7 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       backgroundColor: MyAppColor.backgroundColor,
       key: drawerKey,
@@ -44,16 +48,37 @@ class DashboardScreen extends StatelessWidget {
                 flex: 1,
                 child: SideDrawerMenu(),
               ),
-            const Expanded(
+            Expanded(
               flex: 10,
               child: SafeArea(
                 child: SingleChildScrollView(
-                  padding: EdgeInsets.symmetric(vertical: 30,horizontal: 30),
+                  padding:  Responsive.isDesktop(context)
+                      ? const EdgeInsets.symmetric(
+                          vertical: 30,horizontal: 30,
+                        )
+                       : const EdgeInsets.symmetric(
+                          vertical: 15,horizontal: 15,
+                        ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       //1st:- Dashboard text, Search bar section....
-                      HeaderParts(),
+                      const HeaderParts(),
+                      SizedBox(
+                        height: SizeConfig.blockSizeVertical * 4,
+                      ),
+                      //2nd:- Transfer Info Card section....
+                      SizedBox(
+                        width: SizeConfig.screenWidth,
+                        child: Wrap(
+                          spacing: 10,
+                          runSpacing: 10,
+                          alignment: WrapAlignment.spaceBetween,
+                          children: infoCardData.map((info){
+                            return TransferInfoCard(infoCardModel: info);
+                          }).toList(),
+                        ),
+                      ),
                     ],
                   ),
                 ),
