@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/config/responsive.dart';
 import 'package:responsive_dashboard/config/size_config.dart';
 import 'package:responsive_dashboard/data/model/model.dart';
+import 'package:responsive_dashboard/presentation/widgets/bar_chart_representation.dart';
 import 'package:responsive_dashboard/presentation/widgets/header_parts.dart';
 import 'package:responsive_dashboard/presentation/widgets/side_drawer_menu.dart';
 import 'package:responsive_dashboard/presentation/widgets/transfer_info_card.dart';
@@ -79,6 +80,53 @@ class DashboardScreen extends StatelessWidget {
                           }).toList(),
                         ),
                       ),
+                      SizedBox(
+                        height: SizeConfig.blockSizeVertical * 5,
+                      ),
+                      // 3rd:- Balance and Past 30 days text section....
+                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Balance",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: MyAppColor.secondary,
+                                ),
+                              ),
+                              Text(
+                                "\$1500",
+                                style: TextStyle(
+                                  fontSize: Responsive.isDesktop(context) ?30:20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                            ],
+                          ),
+                           Text(
+                            "PAST 30 DAYS",
+                            style: TextStyle(
+                              fontSize: Responsive.isDesktop(context) ?16:14,
+                              color: MyAppColor.secondary,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: SizeConfig.blockSizeVertical * 4,
+                      ),
+                      // 4th:- Bar chart representation section....
+                      const SizedBox(
+                        height: 180,
+                        child: BarChartRepresentation(),
+                      ),
+
+
                     ],
                   ),
                 ),
