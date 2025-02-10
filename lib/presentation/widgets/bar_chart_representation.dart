@@ -78,7 +78,12 @@ class BarChartRepresentation extends StatelessWidget {
                 if (value.toInt() >= 0 && value.toInt() < months.length) {
                   return Text(
                     months[value.toInt()],
-                      style: const TextStyle(fontSize: 12, color: Colors.grey),
+                      style:  TextStyle(
+                          fontSize: Responsive.isMobile(context)
+                              ? 10
+                              : 12,
+                          color: Colors.grey,
+                      ),
                   );
                 }
                 return const SizedBox.shrink();
