@@ -3,6 +3,7 @@ import 'package:responsive_dashboard/config/responsive.dart';
 import 'package:responsive_dashboard/config/size_config.dart';
 import 'package:responsive_dashboard/data/model/model.dart';
 import 'package:responsive_dashboard/presentation/widgets/bar_chart_representation.dart';
+import 'package:responsive_dashboard/presentation/widgets/header_action_items.dart';
 import 'package:responsive_dashboard/presentation/widgets/header_parts.dart';
 import 'package:responsive_dashboard/presentation/widgets/show_history.dart';
 import 'package:responsive_dashboard/presentation/widgets/side_drawer_menu.dart';
@@ -36,6 +37,9 @@ class DashboardScreen extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
+              actions: const [
+                HeaderActionItems()
+              ],
             )
           : const PreferredSize(
               preferredSize: Size.zero,
@@ -167,8 +171,25 @@ class DashboardScreen extends StatelessWidget {
             Expanded(
               flex: 4,
               child: Container(
+                height: SizeConfig.screenHeight,
+                width: double.infinity,
                 decoration: const BoxDecoration(
-                  color: Colors.amber,
+                  color: MyAppColor.secondaryBg,
+                ),
+                child: SingleChildScrollView(
+                  padding:  Responsive.isDesktop(context)
+                      ? const EdgeInsets.symmetric(
+                    vertical: 30,horizontal: 30,
+                  )
+                      : const EdgeInsets.symmetric(
+                    vertical: 15,horizontal: 15,
+                  ),
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                       HeaderActionItems(),
+                    ],
+                  ),
                 ),
               ),
             ),
