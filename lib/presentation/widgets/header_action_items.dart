@@ -38,6 +38,7 @@ class HeaderActionItems extends StatelessWidget {
         ),
         const SizedBox(width: 15),
         const Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Stack(
               children: [
@@ -59,7 +60,7 @@ class HeaderActionItems extends StatelessWidget {
             ),
             SizedBox(width: 5),
             RotatedBox(
-              quarterTurns: 7,
+              quarterTurns: 3,
               child: Icon(
                 Icons.arrow_back_ios_new,
                 size: 14,

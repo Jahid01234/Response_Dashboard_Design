@@ -5,6 +5,7 @@ import 'package:responsive_dashboard/data/model/model.dart';
 import 'package:responsive_dashboard/presentation/widgets/bar_chart_representation.dart';
 import 'package:responsive_dashboard/presentation/widgets/header_action_items.dart';
 import 'package:responsive_dashboard/presentation/widgets/header_parts.dart';
+import 'package:responsive_dashboard/presentation/widgets/payment_detail_info.dart';
 import 'package:responsive_dashboard/presentation/widgets/show_history.dart';
 import 'package:responsive_dashboard/presentation/widgets/side_drawer_menu.dart';
 import 'package:responsive_dashboard/presentation/widgets/transfer_info_card.dart';
@@ -159,9 +160,13 @@ class DashboardScreen extends StatelessWidget {
                       ),
                       // 6th:- Show history section....
                       const ShowHistory(),
+                      SizedBox(
+                        height: SizeConfig.blockSizeVertical * 3,
+                      ),
 
-
-
+                      // 7th:- payment history section....
+                      if(!Responsive.isDesktop(context))
+                        const PaymentDetailInfo()
                     ],
                   ),
                 ),
@@ -188,6 +193,7 @@ class DashboardScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                        HeaderActionItems(),
+                       PaymentDetailInfo(),
                     ],
                   ),
                 ),
