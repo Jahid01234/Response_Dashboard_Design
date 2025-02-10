@@ -119,7 +119,7 @@ class DashboardScreen extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: SizeConfig.blockSizeVertical * 4,
+                        height: SizeConfig.blockSizeVertical * 3,
                       ),
                       // 4th:- Bar chart representation section....
                       const SizedBox(
@@ -127,7 +127,7 @@ class DashboardScreen extends StatelessWidget {
                         child: BarChartRepresentation(),
                       ),
                       SizedBox(
-                        height: SizeConfig.blockSizeVertical * 5,
+                        height: SizeConfig.blockSizeVertical * 4,
                       ),
                       // 5th:- History and Transaction of last 6 months text section....
                       Column(

@@ -27,33 +27,47 @@ class _ShowHistoryState extends State<ShowHistory> {
           defaultVerticalAlignment: TableCellVerticalAlignment.middle,
           children: List.generate(
             transactionHistory.length,
-            (index) {
+                (index) {
               final transaction = transactionHistory[index];
               return TableRow(
                 decoration: BoxDecoration(
-                   color: selectedIndex == index
-                       ? Colors.white
-                       : MyAppColor.backgroundColor,
                   borderRadius: BorderRadius.circular(10),
+                  color: selectedIndex == index
+                      ? Colors.white
+                      : MyAppColor.backgroundColor,
                 ),
                 children: [
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    padding: const EdgeInsets.only(
-                      top: 10,
-                      bottom: 10,
-                      left: 20,
-                    ),
-                    child: CircleAvatar(
-                      radius: 17,
-                      backgroundImage: AssetImage(transaction.avatar),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                    },
+                    child: Container(
+                      alignment: Alignment.centerLeft,
+                      padding: const EdgeInsets.only(
+                        top: 10,
+                        bottom: 10,
+                        left: 20,
+                      ),
+                      child: CircleAvatar(
+                        radius: 17,
+                        backgroundImage: AssetImage(transaction.avatar),
+                      ),
                     ),
                   ),
-                  Text(
-                    transaction.label,
-                    style: const TextStyle(
-                      letterSpacing: -1,
-                      color: MyAppColor.secondary,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                    },
+                    child: Text(
+                      transaction.label,
+                      style: const TextStyle(
+                        letterSpacing: -1,
+                        color: MyAppColor.secondary,
+                      ),
                     ),
                   ),
                   Text(
@@ -77,7 +91,7 @@ class _ShowHistoryState extends State<ShowHistory> {
                       color: MyAppColor.secondary,
                     ),
                   ),
-                ]
+                ],
               );
             },
           ),
@@ -86,3 +100,4 @@ class _ShowHistoryState extends State<ShowHistory> {
     );
   }
 }
+
