@@ -94,21 +94,21 @@ class TransactionHistory {
 
 List<TransactionHistory> transactionHistory = [
   TransactionHistory(
-    avatar: 'https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600nw-1714666150.jpg',
+    avatar: 'assets/images/man_pic1.jpg',
     label: 'Car Insurance',
     amount: "\$350",
     time: "10:42:23 AM",
     status: "Completed",
   ),
   TransactionHistory(
-    avatar: 'https://portraitsrefined.com/wp-content/uploads/2021/10/headshot-girl-smiling.jpg',
+    avatar: 'assets/images/man_pic2.jpg',
     label: 'Loan',
-    amount: "\$1200",
+    amount: "\$120",
     time: "12:42:00 PM",
     status: "Completed",
   ),
   TransactionHistory(
-    avatar: 'https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=0&k=20&c=tyLvtzutRh22j9GqSGI33Z4HpIwv9vL_MZw_xOE19NQ=',
+    avatar: 'assets/images/man_pic3.jpg',
     label: 'Online Payment',
     amount: "\$154",
     time: "10:42:23 PM",

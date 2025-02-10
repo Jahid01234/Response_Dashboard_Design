@@ -124,7 +124,8 @@ class BarChartRepresentation extends StatelessWidget {
           ),
         ],
       );
-    });
+     }
+    );
   }
 
 }

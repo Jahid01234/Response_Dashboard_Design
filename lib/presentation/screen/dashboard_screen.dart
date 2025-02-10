@@ -4,6 +4,7 @@ import 'package:responsive_dashboard/config/size_config.dart';
 import 'package:responsive_dashboard/data/model/model.dart';
 import 'package:responsive_dashboard/presentation/widgets/bar_chart_representation.dart';
 import 'package:responsive_dashboard/presentation/widgets/header_parts.dart';
+import 'package:responsive_dashboard/presentation/widgets/show_history.dart';
 import 'package:responsive_dashboard/presentation/widgets/side_drawer_menu.dart';
 import 'package:responsive_dashboard/presentation/widgets/transfer_info_card.dart';
 import 'package:responsive_dashboard/resources/color/my_app_color.dart';
@@ -125,6 +126,36 @@ class DashboardScreen extends StatelessWidget {
                         height: 180,
                         child: BarChartRepresentation(),
                       ),
+                      SizedBox(
+                        height: SizeConfig.blockSizeVertical * 5,
+                      ),
+                      // 5th:- History and Transaction of last 6 months text section....
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "History",
+                            style: TextStyle(
+                              fontSize: Responsive.isDesktop(context) ?30:20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                          const Text(
+                            "Transaction of last 6 months",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: MyAppColor.secondary,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: SizeConfig.blockSizeVertical * 3,
+                      ),
+                      // 6th:- Show history section....
+                      const ShowHistory(),
+
 
 
                     ],
